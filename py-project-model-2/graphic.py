@@ -39,7 +39,6 @@ class Graphic:
         ideal_ax_points = [0, Input.LENGTH]
         ideal_ay_points = [Input.U_0, Input.U_LENGTH]
 
-        #debug_dif = 0
         linear_k = (Input.U_0 - Input.U_LENGTH)/(0 - Input.LENGTH)
         linear_b = Input.U_0
 
@@ -47,8 +46,6 @@ class Graphic:
             current_x = i * Input.DELTA_X
             current_ax_points.append(current_x)
             current_ay_points.append(self.u[i])
-            #if debug_dif < abs(self.u[i] - (linear_k*current_x + linear_b)):
-             #   debug_dif = abs(self.u[i] - (linear_k*current_x + linear_b))
             if abs(self.u[i] - (linear_k*current_x + linear_b)) >= eps:
                 is_similar = False
 
